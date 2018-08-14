@@ -21,8 +21,13 @@
     "ingredients"
   ],
   "author": "Simon Davey",
-  "license": "ISC",
+  "license": "GNU GPLv3",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/daffodil11/kitchen-scales.git"
+  },
   "dependencies": {
+    "enum": "^2.5.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
