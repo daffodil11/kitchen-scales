@@ -1,6 +1,6 @@
 var Enum = require('enum');
 
-var Weights = new Enum([
+var WeightUnits = new Enum([
   "Gram",
   "Kilogram",
   "Ounce",
@@ -8,7 +8,7 @@ var Weights = new Enum([
   "Stone"
 ], {ignoreCase: true});
 
-var weightValues = {
+var unitValues = {
   Weights.Gram : 1,
   Weights.Kilogram : 1000,
   Weights.Ounce : 28.3495,
@@ -17,10 +17,6 @@ var weightValues = {
 }
 
 module.exports = {
-  neutraliseWeight : function (weight_unit, quantity) {
-    return weightValues[weight_unit]*quantity;
-  },
-  convertWeight : function (target_weight_unit, quantity) {
-    return quantity / weightValues[target_weight_unit];
-  }
+  WeightUnits,
+  unitValues
 };

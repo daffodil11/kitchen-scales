@@ -13,7 +13,7 @@ class KitchenScales extends React.Component {
   }
 }
 KitchenScales.propTypes = {
-  ingredients: PropTypes.array.isRequired
+  ingredients: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 module.exports = KitchenScales;
