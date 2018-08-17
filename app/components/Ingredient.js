@@ -2,6 +2,7 @@ var React = require('react');
 var PropTypes = require('prop-types');
 var WeightUnit = require('../utils/units').WeightUnit;
 var unitValues = require('../utils/units').unitValues;
+var unitAbbreviations = require('../utils/units').unitAbbreviations;
 
 var Ingredient = function (props) {
   var unitFamily = props.unitFamily;
@@ -15,11 +16,12 @@ var Ingredient = function (props) {
     }
   } else {
     var unit = WeightUnit.Ounce;
-    var quantity = 42;
+    var quantity = (props.quantity/unitValues[unit.toString()]).toPrecision(2);
   }
+  var unitAbbr = unitAbbreviations[unit.toString()];
 
   return (
-    <li>{quantity}{unit.toString()} of {props.ingredient}</li>
+    <li>{quantity}{unitAbbr} of {props.ingredient}</li>
   );
 }
 Ingredient.propTypes = {

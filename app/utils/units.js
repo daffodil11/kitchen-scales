@@ -16,7 +16,16 @@ var unitValues = {
   Stone : 6350.29
 }
 
+var unitAbbreviations = {
+  Gram : "g",
+  Kilogram : "kg",
+  Ounce : "oz",
+  Pound : "lb",
+  Stone : "st"
+}
+
 module.exports = {
   WeightUnit,
-  unitValues
+  unitValues,
+  unitAbbreviations
 };

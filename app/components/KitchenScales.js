@@ -12,7 +12,6 @@ class KitchenScales extends React.Component {
     this.handleUnitChange = this.handleUnitChange.bind(this);
   }
   handleUnitChange (selectedUnitFamily) {
-    console.log(selectedUnitFamily);
     this.setState({
       unitFamily : selectedUnitFamily
     });
@@ -22,11 +21,8 @@ class KitchenScales extends React.Component {
       <div>
         <ul>
           {this.props.ingredients.map(function(item, index) {
-            console.log(item);
-            console.log(index);
             return <Ingredient
               key={index}
-              liIndex={index}
               unitFamily={this.state.unitFamily}
               quantity={item.quantity}
               ingredient={item.ingredient} />
