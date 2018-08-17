@@ -6,7 +6,6 @@ var UnitSelector = function (props) {
     <form>
       <fieldset>
         <legend>
-          <div>
             <label htmlFor="metric">
               Metric
               <input
@@ -16,8 +15,6 @@ var UnitSelector = function (props) {
                 checked={props.selected==="metric"}
                 onChange={props.onChange.bind(null, "metric")}/>
             </label>
-          </div>
-          <div>
             <label htmlFor="imperial">
               Imperial
               <input
@@ -27,7 +24,6 @@ var UnitSelector = function (props) {
                 checked={props.selected==="imperial"}
                 onChange={props.onChange.bind(null, "imperial")} />
             </label>
-          </div>
         </legend>
       </fieldset>
     </form>
