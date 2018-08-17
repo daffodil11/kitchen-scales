@@ -9,11 +9,11 @@ var WeightUnit = new Enum([
 ], {ignoreCase: true});
 
 var unitValues = {
-  Weights.Gram : 1,
-  Weights.Kilogram : 1000,
-  Weights.Ounce : 28.3495,
-  Weights.Pound : 453.592,
-  Weights.Stone : 6350.29
+  Gram : 1,
+  Kilogram : 1000,
+  Ounce : 28.3495,
+  Pound : 453.592,
+  Stone : 6350.29
 }
 
 module.exports = {

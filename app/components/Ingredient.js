@@ -1,6 +1,6 @@
 var React = require('react');
 var PropTypes = require('prop-types');
-var WeightUnit = require('../utils/units').WeightUnits;
+var WeightUnit = require('../utils/units').WeightUnit;
 var unitValues = require('../utils/units').unitValues;
 
 var Ingredient = function (props) {
@@ -19,12 +19,13 @@ var Ingredient = function (props) {
   }
 
   return (
-    <li key={props.key}>{quantity}{unit.value} of {props.ingredient}</li>
+    <li>{quantity}{unit.toString()} of {props.ingredient}</li>
   );
 }
 Ingredient.propTypes = {
-  key : PropTypes.number.isRequired,
   unitFamily : PropTypes.string.isRequired,
   quantity : PropTypes.number.isRequired,
   ingredient : PropTypes.string.isRequired
 }
+
+module.exports = Ingredient;

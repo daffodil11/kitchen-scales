@@ -1,6 +1,7 @@
 var React = require('react');
 var PropTypes = require('prop-types');
 var UnitSelector = require('./UnitSelector');
+var Ingredient = require('./Ingredient');
 
 class KitchenScales extends React.Component {
   constructor (props) {
@@ -21,8 +22,15 @@ class KitchenScales extends React.Component {
       <div>
         <ul>
           {this.props.ingredients.map(function(item, index) {
-            return <li key={index}>{item.quantity+item.unit+' of '+item.ingredient}</li>
-          })}
+            console.log(item);
+            console.log(index);
+            return <Ingredient
+              key={index}
+              liIndex={index}
+              unitFamily={this.state.unitFamily}
+              quantity={item.quantity}
+              ingredient={item.ingredient} />
+          }.bind(this))}
         </ul>
         <UnitSelector selected={this.state.unitFamily} onChange={this.handleUnitChange}/>
       </div>

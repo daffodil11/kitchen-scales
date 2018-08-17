@@ -3,19 +3,16 @@ var ReactDOM = require('react-dom');
 require('./index.css');
 var KitchenScales = require('./components/KitchenScales');
 
-var tempuraIngredients = [
-  {ingredient: "flour",
-unit: "US cup",
-quantity: 1},
-{ingredient: "water",
-unit: "US cup",
-quantity: 1},
-{ingredient: "egg",
-unit: "each",
-quantity: 1}
+var icing = [
+  {ingredient: "sugar",
+unit: "Gram",
+quantity: 100},
+{ingredient: "butter",
+unit: "Gram",
+quantity: 50}
 ];
 
 ReactDOM.render(
-  <KitchenScales ingredients={tempuraIngredients}/>,
+  <KitchenScales ingredients={icing}/>,
   document.getElementById('app')
 );
