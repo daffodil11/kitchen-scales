@@ -2,26 +2,6 @@ var React = require('react');
 var PropTypes = require('prop-types');
 
 class UnitSelector extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      metric: true,
-      imperial: false
-    }
-    this.handleInputChange = this.handleInputChange.bind(this);
-  }
-  handleInputChange (event) {
-    event.preventDefault();
-    var inputId = event.target.id;
-    console.log(inputId);
-    this.setState(function () {
-      return {
-        metric: (inputId==="metric"),
-        imperial: (inputId==="imperial")
-      }
-    })
-    this.props.onChange(this.state.metric);
-  }
   render() {
     return (
       <form>
@@ -34,8 +14,8 @@ class UnitSelector extends React.Component {
                   type="radio"
                   id="metric"
                   name="unit"
-                  checked={this.state.metric}
-                  onChange={this.handleInputChange}/>
+                  checked={this.props.selected==="metric"}
+                  onChange={this.props.onChange.bind(null, "metric")}/>
               </label>
             </div>
             <div>
@@ -45,8 +25,8 @@ class UnitSelector extends React.Component {
                   type="radio"
                   id="imperial"
                   name="unit"
-                  checked={this.state.imperial}
-                  onChange={this.handleInputChange} />
+                  checked={this.props.selected==="imperial"}
+                  onChange={this.props.onChange.bind(null, "imperial")} />
               </label>
             </div>
           </legend>
@@ -56,6 +36,7 @@ class UnitSelector extends React.Component {
   }
 }
 UnitSelector.propTypes = {
+  selected : PropTypes.string.isRequired,
   onChange : PropTypes.func.isRequired
 }
 

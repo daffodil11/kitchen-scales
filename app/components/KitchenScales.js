@@ -5,10 +5,16 @@ var UnitSelector = require('./UnitSelector');
 class KitchenScales extends React.Component {
   constructor (props) {
     super(props);
+    this.state = {
+      unitFamily : "metric"
+    }
     this.handleUnitChange = this.handleUnitChange.bind(this);
   }
-  handleUnitChange (metric) {
-    console.log(metric ? "Metric" : "Imperial");
+  handleUnitChange (selectedUnitFamily) {
+    console.log(selectedUnitFamily);
+    this.setState({
+      unitFamily : selectedUnitFamily
+    });
   }
   render () {
     return (
@@ -18,7 +24,7 @@ class KitchenScales extends React.Component {
             return <li key={index}>{item.quantity+item.unit+' of '+item.ingredient}</li>
           })}
         </ul>
-        <UnitSelector onChange={this.handleUnitChange}/>
+        <UnitSelector selected={this.state.unitFamily} onChange={this.handleUnitChange}/>
       </div>
     )
   }
