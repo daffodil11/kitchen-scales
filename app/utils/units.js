@@ -12,16 +12,14 @@ var unitValues = {
   Gram : 1,
   Kilogram : 1000,
   Ounce : 28.3495,
-  Pound : 453.592,
-  Stone : 6350.29
+  Pound : 453.592
 }
 
 var unitAbbreviations = {
   Gram : "g",
   Kilogram : "kg",
   Ounce : "oz",
-  Pound : "lb",
-  Stone : "st"
+  Pound : "lb"
 }
 
 module.exports = {
