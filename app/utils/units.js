@@ -1,6 +1,6 @@
 var Enum = require('enum');
 
-var WeightUnits = new Enum([
+var WeightUnit = new Enum([
   "Gram",
   "Kilogram",
   "Ounce",
@@ -17,6 +17,6 @@ var unitValues = {
 }
 
 module.exports = {
-  WeightUnits,
+  WeightUnit,
   unitValues
 };
