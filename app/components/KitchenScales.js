@@ -2,12 +2,20 @@ var React = require('react');
 var PropTypes = require('prop-types');
 var UnitSelector = require('./UnitSelector');
 var Ingredient = require('./Ingredient');
+var unitValues = require('../utils/units').unitValues;
 
 class KitchenScales extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      unitFamily : "metric"
+      unitFamily : "metric",
+      recipeYield : props.recipeYield,
+      ingredients : props.ingredients.map((item) => {
+        return ({
+          ingredient : item.ingredient,
+          quantity : this.gPerServing(item.quantity, item.unit, props.recipeYield)
+        })
+      })
     }
     this.handleUnitChange = this.handleUnitChange.bind(this);
   }
@@ -16,16 +24,23 @@ class KitchenScales extends React.Component {
       unitFamily : selectedUnitFamily
     });
   }
+  gPerServing (quantity, unit, recipeYield) {
+    console.log(quantity);
+    console.log(unitValues[unit.toString()]);
+    console.log(recipeYield);
+    return quantity*unitValues[unit.toString()]/recipeYield;
+  }
   render () {
     return (
       <div>
         <ul>
-          {this.props.ingredients.map(function(item, index) {
+          {this.state.ingredients.map(function(item, index) {
             return <Ingredient
               key={index}
               unitFamily={this.state.unitFamily}
               quantity={item.quantity}
-              ingredient={item.ingredient} />
+              ingredient={item.ingredient}
+              recipeYield={this.state.recipeYield} />
           }.bind(this))}
         </ul>
         <UnitSelector selected={this.state.unitFamily} onChange={this.handleUnitChange}/>
@@ -36,9 +51,9 @@ class KitchenScales extends React.Component {
 KitchenScales.propTypes = {
   ingredients : PropTypes.arrayOf(PropTypes.object).isRequired,
   recipeYield : PropTypes.number
-}
+};
 KitchenScales.defaultProps = {
   recipeYield : 1
-}
+};
 
 module.exports = KitchenScales;

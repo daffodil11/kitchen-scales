@@ -13,13 +13,17 @@ var unitValues = {
   Kilogram : 1000,
   Ounce : 28.3495,
   Pound : 453.592
-}
+};
 
 var unitAbbreviations = {
   Gram : "g",
   Kilogram : "kg",
   Ounce : "oz",
   Pound : "lb"
+};
+
+var gPerServing = function (quantity, unit, recipeYield) {
+  return true;
 }
 
 module.exports = {

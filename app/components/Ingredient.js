@@ -16,7 +16,7 @@ var Ingredient = function (props) {
     var unit = WeightUnit.Ounce;
   }
   var unitAbbr = unitAbbreviations[unit.toString()];
-  var quantity = Math.round(props.quantity/unitValues[unit.toString()]);
+  var quantity = Math.round((props.quantity/unitValues[unit.toString()])*props.recipeYield);
 
   return (
     <li>{quantity}{unitAbbr} of {props.ingredient}</li>
@@ -25,7 +25,11 @@ var Ingredient = function (props) {
 Ingredient.propTypes = {
   unitFamily : PropTypes.string.isRequired,
   quantity : PropTypes.number.isRequired,
-  ingredient : PropTypes.string.isRequired
-}
+  ingredient : PropTypes.string.isRequired,
+  recipeYield : PropTypes.number
+};
+Ingredient.defaultProps = {
+  recipeYield : 1
+};
 
 module.exports = Ingredient;
