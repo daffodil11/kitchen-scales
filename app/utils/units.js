@@ -22,10 +22,6 @@ var unitAbbreviations = {
   Pound : "lb"
 };
 
-var gPerServing = function (quantity, unit, recipeYield) {
-  return true;
-}
-
 module.exports = {
   WeightUnit,
   unitValues,

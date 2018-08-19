@@ -24,10 +24,12 @@ class KitchenScales extends React.Component {
       unitFamily : selectedUnitFamily
     });
   }
+  handleYieldChange (newRecipeYield) {
+    this.setState({
+      recipeYield : newRecipeYield
+    })
+  }
   gPerServing (quantity, unit, recipeYield) {
-    console.log(quantity);
-    console.log(unitValues[unit.toString()]);
-    console.log(recipeYield);
     return quantity*unitValues[unit.toString()]/recipeYield;
   }
   render () {
@@ -43,7 +45,12 @@ class KitchenScales extends React.Component {
               recipeYield={this.state.recipeYield} />
           }.bind(this))}
         </ul>
-        <UnitSelector selected={this.state.unitFamily} onChange={this.handleUnitChange}/>
+        <UnitSelector
+          selected={this.state.unitFamily}
+          onChange={this.handleUnitChange}/>
+        <YieldSetter
+          recipeYield={this.state.recipeYield}
+          onChange={this.handleYieldChange}/>
       </div>
     )
   }
