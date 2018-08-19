@@ -14,12 +14,12 @@ unit: WeightUnit.Ounce,
 quantity: 5},
 {ingredient: "milk",
 unit: VolumeUnit.Millilitre,
-quantity: 600},
+quantity: 400},
 {ingredient: "water",
 unit: VolumeUnit.GallonUS,
 quantity: 0.5}
 ];
-var recipeYield = 20;
+var recipeYield = 4;
 
 ReactDOM.render(
   <KitchenScales ingredients={icing} recipeYield={recipeYield}/>,

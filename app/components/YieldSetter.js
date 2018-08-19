@@ -3,14 +3,14 @@ var PropTypes = require('prop-types');
 
 var YieldSetter = function (props) {
   return (
-    <form>
+    <form className="yield">
       <input
         id="yieldInput"
         type="text"
         autoComplete="off"
         value={props.recipeYield}
         onChange={props.onChange} />
-      <label htmlFor="yieldInput">{props.label}</label>
+      <label htmlFor="yieldInput">{' '+props.label}</label>
     </form>
   );
 };

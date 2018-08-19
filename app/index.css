@@ -1,0 +1,28 @@
+body {
+  font-family: Roboto, Oxygen-Sans, Helvetica Neue, sans-serif;
+}
+
+div.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+div.column {
+}
+
+li.ingredient {
+  list-style-type: none;
+}
+
+fieldset {
+  border: none;
+}
+
+legend label {
+  display: block;
+}
+
+#yieldInput {
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.43);
+}

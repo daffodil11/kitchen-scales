@@ -44,32 +44,33 @@ class KitchenScales extends React.Component {
     if (unitType==="Weight") {
       return quantity*unitValues[unit.toString()]/recipeYield;
     } else {
-      console.log("Volume");
-      console.log(unit);
-      console.log(quantity);
       return quantity*volumeUnitValues[unit.toString()]/recipeYield;
     }
   }
   render () {
     return (
-      <div>
-        <ul>
-          {this.state.ingredients.map(function(item, index) {
-            return <Ingredient
-              key={index}
-              unitFamily={this.state.unitFamily}
-              unitType={item.unitType}
-              quantity={item.quantity}
-              ingredient={item.ingredient}
-              recipeYield={this.state.recipeYield} />
-          }.bind(this))}
-        </ul>
-        <UnitSelector
-          selected={this.state.unitFamily}
-          onChange={this.handleUnitChange}/>
-        <YieldSetter
-          recipeYield={this.state.recipeYield}
-          onChange={this.handleYieldChange}/>
+      <div className="row">
+        <div className="column">
+          <ul className="ingredient-list">
+            {this.state.ingredients.map(function(item, index) {
+              return <Ingredient
+                key={index}
+                unitFamily={this.state.unitFamily}
+                unitType={item.unitType}
+                quantity={item.quantity}
+                ingredient={item.ingredient}
+                recipeYield={this.state.recipeYield} />
+            }.bind(this))}
+          </ul>
+        </div>
+        <div className="column">
+          <UnitSelector
+            selected={this.state.unitFamily}
+            onChange={this.handleUnitChange}/>
+          <YieldSetter
+            recipeYield={this.state.recipeYield}
+            onChange={this.handleYieldChange}/>
+        </div>
       </div>
     )
   }

@@ -39,7 +39,7 @@ var Ingredient = function (props) {
   }
 
   return (
-    <li>{quantity}{unitAbbr} of {props.ingredient}</li>
+    <li className="ingredient">{quantity}{unitAbbr} of {props.ingredient}</li>
   );
 }
 Ingredient.propTypes = {
