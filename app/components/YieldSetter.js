@@ -7,20 +7,20 @@ var YieldSetter = function (props) {
       <input
         id="yieldInput"
         type="text"
-        autocomplete="off"
+        autoComplete="off"
         value={props.recipeYield}
-        onChange={props.handleChange} />
+        onChange={props.onChange} />
       <label htmlFor="yieldInput">{props.label}</label>
     </form>
   );
 };
 YieldSetter.propTypes = {
   recipeYield : PropTypes.number,
-  handleChange : PropTypes.func.isRequired,
+  onChange : PropTypes.func.isRequired,
   label : PropTypes.string
 };
 YieldSetter.defaultProps = {
-  recipeYield : 1
+  recipeYield : 1,
   label : "servings"
 }
 

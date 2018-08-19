@@ -2,6 +2,7 @@ var React = require('react');
 var PropTypes = require('prop-types');
 var UnitSelector = require('./UnitSelector');
 var Ingredient = require('./Ingredient');
+var YieldSetter = require('./YieldSetter');
 var unitValues = require('../utils/units').unitValues;
 
 class KitchenScales extends React.Component {
@@ -18,16 +19,20 @@ class KitchenScales extends React.Component {
       })
     }
     this.handleUnitChange = this.handleUnitChange.bind(this);
+    this.handleYieldChange = this.handleYieldChange.bind(this);
   }
   handleUnitChange (selectedUnitFamily) {
     this.setState({
       unitFamily : selectedUnitFamily
     });
   }
-  handleYieldChange (newRecipeYield) {
-    this.setState({
-      recipeYield : newRecipeYield
-    })
+  handleYieldChange (event) {
+    var newYield = parseInt(event.target.value);
+    if (Number.isInteger(newYield)) {
+      this.setState({
+        recipeYield : newYield
+      });
+    }
   }
   gPerServing (quantity, unit, recipeYield) {
     return quantity*unitValues[unit.toString()]/recipeYield;
