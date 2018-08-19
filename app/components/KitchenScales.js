@@ -3,7 +3,9 @@ var PropTypes = require('prop-types');
 var UnitSelector = require('./UnitSelector');
 var Ingredient = require('./Ingredient');
 var YieldSetter = require('./YieldSetter');
+var WeightUnit = require('../utils/units').WeightUnit;
 var unitValues = require('../utils/units').unitValues;
+var volumeUnitValues = require('../utils/units').volumeUnitValues;
 
 class KitchenScales extends React.Component {
   constructor (props) {
@@ -12,9 +14,13 @@ class KitchenScales extends React.Component {
       unitFamily : "metric",
       recipeYield : props.recipeYield,
       ingredients : props.ingredients.map((item) => {
+        var ingredientUnitType = WeightUnit.enums.some(function (unitEnum) {
+          return (unitEnum == item.unit);
+        }) ? "Weight" : "Volume";
         return ({
           ingredient : item.ingredient,
-          quantity : this.gPerServing(item.quantity, item.unit, props.recipeYield)
+          unitType : ingredientUnitType,
+          quantity : this.metricUnitPerServing(item.quantity, item.unit, props.recipeYield, ingredientUnitType)
         })
       })
     }
@@ -34,8 +40,15 @@ class KitchenScales extends React.Component {
       });
     }
   }
-  gPerServing (quantity, unit, recipeYield) {
-    return quantity*unitValues[unit.toString()]/recipeYield;
+  metricUnitPerServing (quantity, unit, recipeYield, unitType) {
+    if (unitType==="Weight") {
+      return quantity*unitValues[unit.toString()]/recipeYield;
+    } else {
+      console.log("Volume");
+      console.log(unit);
+      console.log(quantity);
+      return quantity*volumeUnitValues[unit.toString()]/recipeYield;
+    }
   }
   render () {
     return (
@@ -45,6 +58,7 @@ class KitchenScales extends React.Component {
             return <Ingredient
               key={index}
               unitFamily={this.state.unitFamily}
+              unitType={item.unitType}
               quantity={item.quantity}
               ingredient={item.ingredient}
               recipeYield={this.state.recipeYield} />
