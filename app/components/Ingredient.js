@@ -22,7 +22,10 @@ var Ingredient = function (props) {
     var unitAbbr = unitAbbreviations[unit.toString()];
     var quantity = Math.round((props.quantity/unitValues[unit.toString()])*props.recipeYield);
   } else {
-    if (props.unitFamily==="metric") {
+    if (props.quantity*props.recipeYield < 30) {
+      console.log(props.quantity);
+      var unit = VolumeUnit.Teaspoon;
+    } else if (props.unitFamily==="metric") {
       if (props.quantity >= 1000) {
         var unit = VolumeUnit.Litre;
       } else {
