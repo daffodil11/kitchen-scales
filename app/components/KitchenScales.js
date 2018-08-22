@@ -49,8 +49,8 @@ class KitchenScales extends React.Component {
   }
   render () {
     return (
-      <div className="row">
-        <div className="column">
+      <div className="ks-container">
+        <div className="ks-column">
           <ul className="ingredient-list">
             {this.state.ingredients.map(function(item, index) {
               return <Ingredient
@@ -63,7 +63,7 @@ class KitchenScales extends React.Component {
             }.bind(this))}
           </ul>
         </div>
-        <div className="column">
+        <div className="ks-column">
           <UnitSelector
             selected={this.state.unitFamily}
             onChange={this.handleUnitChange}/>

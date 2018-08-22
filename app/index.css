@@ -2,20 +2,53 @@ body {
   font-family: Roboto, Oxygen-Sans, Helvetica Neue, sans-serif;
 }
 
-div.row {
-  display: flex;
-  justify-content: space-around;
+div.ks-container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-div.column {
+div.ks-column {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 400px) {
+  div.ks-container {
+    width: 85%;
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 550px) {
+  div.ks-container {
+    width: 80%;
+  }
+  div.ks-column {
+    margin-left: 4%;
+    width: 48%;
+  }
+  div.ks-column:first-child {
+    margin-left: 0;
+  }
 }
 
 li.ingredient {
   list-style-type: none;
 }
 
+form {
+  margin-bottom: 10px;
+}
+
 fieldset {
   border: none;
+  margin: 0;
+  padding: 0;
 }
 
 legend label {
@@ -25,4 +58,6 @@ legend label {
 #yieldInput {
   border-radius: 3px;
   border: 1px solid rgba(0, 0, 0, 0.43);
+  width: 42px;
+  text-align: center;
 }
