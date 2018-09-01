@@ -30,6 +30,10 @@ div.ks-column {
   }
 }
 
+ul.ingredient-list {
+  padding-left: 0;
+}
+
 li.ingredient {
   list-style-type: none;
 }
