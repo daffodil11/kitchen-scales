@@ -1,7 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 require('./index.css');
-var KitchenScales = require('./components/KitchenScales');
+var App = require('./App.js');
 var WeightUnit = require('./utils/units').WeightUnit;
 var VolumeUnit = require('./utils/units').VolumeUnit;
 
@@ -22,6 +22,6 @@ quantity: 0.5}
 var recipeYield = 4;
 
 ReactDOM.render(
-  <KitchenScales ingredients={icing} recipeYield={recipeYield}/>,
+  <App ingredients={icing} recipeYield={recipeYield}/>,
   document.getElementById('app')
 );
