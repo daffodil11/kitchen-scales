@@ -10,10 +10,18 @@ class Input extends React.Component {
       unit: WeightUnit.Gram,
       quantity: 1}]
     }
+    this.handle = this.handle.bind(this);
+  }
+
+  handle (event) {
+    console.log(event);
   }
 
   render () {
-    return <IngredientInput />
+    return <IngredientInput
+      recipeIngredient={this.state.ingredients[0]}
+      onChange={this.handle}
+      />
   }
 }
 
