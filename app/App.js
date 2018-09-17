@@ -1,11 +1,12 @@
 var React = require('react');
 var PropTypes = require('prop-types');
+var RecipeInput = require('./input/RecipeInput');
 var KitchenScales = require('./components/KitchenScales');
 
 var App = function (props) {
   return (
     <div>
-      <p>Input component to go here!</p>
+      <RecipeInput />
       <KitchenScales ingredients={props.ingredients} recipeYield={props.recipeYield} />
     </div>
   );

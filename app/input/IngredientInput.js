@@ -15,7 +15,7 @@ var IngredientInput = function (props) {
   );
 };
 IngredientInput.propTypes = {
-  ingredient : PropTypes.number,
+  ingredient : PropTypes.string,
   onChange : PropTypes.func.isRequired
 };
 IngredientInput.defaultProps = {

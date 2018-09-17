@@ -1,5 +1,9 @@
 var React = require('react');
+var PropTypes = require('prop-types');
 var WeightUnit = require('../utils/units').WeightUnit;
+var IngredientInput = require('./IngredientInput');
+var UnitInput = require('./UnitInput');
+var QuantityInput = require('./QuantityInput');
 
 class Input extends React.Component {
   constructor (props) {

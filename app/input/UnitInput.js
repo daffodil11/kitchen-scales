@@ -14,7 +14,7 @@ var UnitInput = function (props) {
   );
 };
 UnitInput.propTypes = {
-  unit : PropTypes.number,
+  unit : PropTypes.object,
   onChange : PropTypes.func.isRequired
 };
 UnitInput.defaultProps = {
