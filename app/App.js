@@ -6,7 +6,6 @@ var KitchenScales = require('./components/KitchenScales');
 var App = function (props) {
   return (
     <div>
-      <RecipeInput />
       <KitchenScales ingredients={props.ingredients} recipeYield={props.recipeYield} />
     </div>
   );
