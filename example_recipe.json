@@ -1,0 +1,20 @@
+{
+  "ingredients" : [
+    {
+      "ingredient": "flour",
+      "unit": "Gram",
+      "quantity": 100
+    },
+    {
+      "ingredient": "butter",
+      "unit": "Gram",
+      "quantity": 50
+    },
+    {
+      "ingredient": "sugar",
+      "unit": "Gram",
+      "quantity": 200
+    }
+  ],
+  "yield" : 4
+}

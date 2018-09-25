@@ -4,6 +4,8 @@ require('./index.css');
 var App = require('./App.js');
 var WeightUnit = require('./utils/units').WeightUnit;
 var VolumeUnit = require('./utils/units').VolumeUnit;
+import data from './example_recipe.json'
+console.log(data);
 
 var icing = [
   {ingredient: "sugar",
