@@ -4,26 +4,10 @@ require('./index.css');
 var App = require('./App.js');
 var WeightUnit = require('./utils/units').WeightUnit;
 var VolumeUnit = require('./utils/units').VolumeUnit;
-import data from './example_recipe.json'
-console.log(data);
-
-var icing = [
-  {ingredient: "sugar",
-unit: WeightUnit.Gram,
-quantity: 1000},
-{ingredient: "butter",
-unit: WeightUnit.Ounce,
-quantity: 5},
-{ingredient: "milk",
-unit: VolumeUnit.Millilitre,
-quantity: 400},
-{ingredient: "water",
-unit: VolumeUnit.GallonUS,
-quantity: 0.5}
-];
-var recipeYield = 4;
+import recipe from './example_recipe.json'
+console.log(recipe);
 
 ReactDOM.render(
-  <App ingredients={icing} recipeYield={recipeYield}/>,
+  <App ingredients={recipe.ingredients} recipeYield={recipe.yield}/>,
   document.getElementById('app')
 );
