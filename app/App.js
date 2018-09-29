@@ -6,16 +6,18 @@ var KitchenScales = require('./components/KitchenScales');
 var App = function (props) {
   return (
     <div>
-      <KitchenScales ingredients={props.ingredients} recipeYield={props.recipeYield} />
+      <KitchenScales ingredients={props.ingredients} recipeYield={props.recipeYield} servingType={props.servingType}/>
     </div>
   );
 }
 App.propTypes = {
   ingredients : PropTypes.arrayOf(PropTypes.object).isRequired,
-  recipeYield : PropTypes.number
+  recipeYield : PropTypes.number,
+  servingType : PropTypes.string
 };
 App.defaultProps = {
-  recipeYield : 1
+  recipeYield : 1,
+  servingType : "servings"
 };
 
 module.exports = App;

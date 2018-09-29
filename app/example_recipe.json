@@ -16,5 +16,6 @@
       "quantity": 200
     }
   ],
-  "yield" : 4
+  "yield" : 4,
+  "servingType" : "cake(s)"
 }

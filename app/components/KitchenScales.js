@@ -77,7 +77,8 @@ class KitchenScales extends React.Component {
             onChange={this.handleUnitChange}/>
           <YieldSetter
             recipeYield={this.state.recipeYield}
-            onChange={this.handleYieldChange}/>
+            onChange={this.handleYieldChange}
+            label={this.props.servingType}/>
         </div>
       </div>
     )
@@ -85,10 +86,12 @@ class KitchenScales extends React.Component {
 }
 KitchenScales.propTypes = {
   ingredients : PropTypes.arrayOf(PropTypes.object).isRequired,
-  recipeYield : PropTypes.number
+  recipeYield : PropTypes.number,
+  servingType : PropTypes.string
 };
 KitchenScales.defaultProps = {
-  recipeYield : 1
+  recipeYield : 1,
+  servingType : "servings"
 };
 
 module.exports = KitchenScales;

@@ -20,8 +20,7 @@ YieldSetter.propTypes = {
   label : PropTypes.string
 };
 YieldSetter.defaultProps = {
-  recipeYield : 1,
-  label : "servings"
+  recipeYield : 1
 }
 
 module.exports = YieldSetter;
