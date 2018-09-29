@@ -4,7 +4,7 @@ var UnitSelector = require('./UnitSelector');
 var Ingredient = require('./Ingredient');
 var YieldSetter = require('./YieldSetter');
 var WeightUnit = require('../utils/units').WeightUnit;
-var unitValues = require('../utils/units').unitValues;
+var weightUnitValues = require('../utils/units').weightUnitValues;
 var volumeUnitValues = require('../utils/units').volumeUnitValues;
 
 class KitchenScales extends React.Component {
@@ -14,13 +14,16 @@ class KitchenScales extends React.Component {
       unitFamily : "metric",
       recipeYield : props.recipeYield,
       ingredients : props.ingredients.map((item) => {
+        //Use the some method of WeightUnit.enums to check if the ingredient is
+        //of the type of any of the weight units. If not, it's volume.
         var ingredientUnitType = WeightUnit.enums.some(function (unitEnum) {
           return (unitEnum == item.unit);
         }) ? "Weight" : "Volume";
+        var unitValues = (ingredientUnitType=="Weight") ? weightUnitValues : volumeUnitValues;
         return ({
           ingredient : item.ingredient,
           unitType : ingredientUnitType,
-          quantity : this.metricUnitPerServing(item.quantity, item.unit, props.recipeYield, ingredientUnitType)
+          quantity : item.quantity*unitValues[item.unit.toString()]/props.recipeYield
         })
       })
     }
@@ -38,13 +41,6 @@ class KitchenScales extends React.Component {
       this.setState({
         recipeYield : newYield
       });
-    }
-  }
-  metricUnitPerServing (quantity, unit, recipeYield, unitType) {
-    if (unitType==="Weight") {
-      return quantity*unitValues[unit.toString()]/recipeYield;
-    } else {
-      return quantity*volumeUnitValues[unit.toString()]/recipeYield;
     }
   }
   render () {
