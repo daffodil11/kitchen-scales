@@ -53,6 +53,10 @@ class KitchenScales extends React.Component {
       this.setState({
         recipeYield : newYield
       });
+    } else if (event.target.value=='') {
+      this.setState({
+        recipeYield : 0
+      });
     }
   }
   render () {
