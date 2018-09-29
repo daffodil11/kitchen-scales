@@ -18,7 +18,7 @@ var VolumeUnit = new Enum([
   "GallonUS"
 ])
 
-var unitValues = {
+var weightUnitValues = {
   Gram : 1,
   Kilogram : 1000,
   Ounce : 28.3495,
@@ -35,7 +35,7 @@ var volumeUnitValues = {
   GallonUS : 3785.41
 }
 
-var unitAbbreviations = {
+var weightUnitAbbreviations = {
   Gram : "g",
   Kilogram : "kg",
   Ounce : "oz",
@@ -54,8 +54,8 @@ var volumeUnitAbbreviations = {
 
 module.exports = {
   WeightUnit,
-  unitValues,
-  unitAbbreviations,
+  weightUnitValues,
+  weightUnitAbbreviations,
   VolumeUnit,
   volumeUnitValues,
   volumeUnitAbbreviations
