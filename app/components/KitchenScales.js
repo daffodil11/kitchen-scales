@@ -13,6 +13,8 @@ class KitchenScales extends React.Component {
     super(props);
     this.state = {
       unitFamily : "metric",
+      weightUnit : "Gram",
+      volumeUnit : "Millilitre",
       recipeYield : props.recipeYield,
       ingredients : props.ingredients.map((item) => {
         var wgt = WeightUnit.get(item.unit);
@@ -42,9 +44,14 @@ class KitchenScales extends React.Component {
     this.handleUnitChange = this.handleUnitChange.bind(this);
     this.handleYieldChange = this.handleYieldChange.bind(this);
   }
-  handleUnitChange (selectedUnitFamily) {
-    this.setState({
-      unitFamily : selectedUnitFamily
+  handleUnitChange (unitType, selectEvent) {
+    selectEvent.persist();
+    this.setState(function() {
+      if (unitType==="Weight") {
+        return {weightUnit : selectEvent.target.value}
+      } else if (unitType==="Volume") {
+        return {volumeUnit : selectEvent.target.value}
+      }
     });
   }
   handleYieldChange (event) {
@@ -77,7 +84,8 @@ class KitchenScales extends React.Component {
         </div>
         <div className="ks-column">
           <UnitSelector
-            selected={this.state.unitFamily}
+            weightSelection={this.state.weightUnit}
+            volumeSelection={this.state.volumeUnit}
             onChange={this.handleUnitChange}/>
           <YieldSetter
             recipeYield={this.state.recipeYield}
