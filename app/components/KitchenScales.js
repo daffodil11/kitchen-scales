@@ -74,8 +74,7 @@ class KitchenScales extends React.Component {
             {this.state.ingredients.map(function(item, index) {
               return <Ingredient
                 key={index}
-                unitFamily={this.state.unitFamily}
-                unitType={item.unitType}
+                unit={(item.unitType=="Weight") ? this.state.weightUnit: this.state.volumeUnit}
                 quantity={item.quantity}
                 ingredient={item.ingredient}
                 recipeYield={this.state.recipeYield} />
