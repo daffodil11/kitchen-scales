@@ -7,24 +7,29 @@ var UnitSelector = function (props) {
       <div>
         <label htmlFor="weight-unit-selector">Weight Unit: </label>
         <select id="weight-unit-selector">
-          <option selected value="Gram">Grams & Kilograms</option>
-          <option value="Ounce">Ounces & Pounds</option>
+          <option selected={props.weight_selection==="Gram"} value="Gram">Grams & Kilograms</option>
+          <option selected={props.weight_selection==="Ounce"} value="Ounce">Ounces & Pounds</option>
         </select>
       </div>
       <div>
         <label htmlFor="volume-unit-selector">Volume Unit: </label>
         <select id="volume-unit-selector">
-          <option selected value="Millilitre">Millilitres & Litres</option>
-          <option value="FluidOunce">Fluid Ounces</option>
-          <option value="CupUS">US Cups</option>
+          <option selected={props.volume_selection==="Millilitre"} value="Millilitre">Millilitres & Litres</option>
+          <option selected={props.volume_selection==="FluidOunce"} value="FluidOunce">Fluid Ounces</option>
+          <option selected={props.volume_selection==="CupUS"} value="CupUS">US Cups</option>
         </select>
       </div>
     </form>
   )
 }
 UnitSelector.propTypes = {
-  selected : PropTypes.string.isRequired,
+  weight_selection : PropTypes.string.isRequired,
+  volume_selection : PropTypes.string.isRequired,
   onChange : PropTypes.func.isRequired
+}
+UnitSelector.defaultProps = {
+  weight_selection : "Gram",
+  volume_selection : "Millilitre"
 }
 
 module.exports = UnitSelector;
