@@ -4,28 +4,21 @@ var PropTypes = require('prop-types');
 var UnitSelector = function (props) {
   return (
     <form className="unit-selection">
-      <fieldset>
-        <legend>
-            <label htmlFor="metric">
-              <input
-                type="radio"
-                id="metric"
-                name="unit"
-                checked={props.selected==="metric"}
-                onChange={props.onChange.bind(null, "metric")}/>
-              Metric
-            </label>
-            <label htmlFor="imperial">
-              <input
-                type="radio"
-                id="imperial"
-                name="unit"
-                checked={props.selected==="imperial"}
-                onChange={props.onChange.bind(null, "imperial")} />
-              Imperial
-            </label>
-        </legend>
-      </fieldset>
+      <div>
+        <label htmlFor="weight-unit-selector">Weight Unit: </label>
+        <select id="weight-unit-selector">
+          <option selected value="Gram">Grams & Kilograms</option>
+          <option value="Ounce">Ounces & Pounds</option>
+        </select>
+      </div>
+      <div>
+        <label htmlFor="volume-unit-selector">Volume Unit: </label>
+        <select id="volume-unit-selector">
+          <option selected value="Millilitre">Millilitres & Litres</option>
+          <option value="FluidOunce">Fluid Ounces</option>
+          <option value="CupUS">US Cups</option>
+        </select>
+      </div>
     </form>
   )
 }
