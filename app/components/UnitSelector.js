@@ -24,8 +24,7 @@ var UnitSelector = function (props) {
         <label htmlFor="volume-unit-selector">Volume Unit: </label>
         <select id="volume-unit-selector" value={props.volumeSelection} onChange={props.onChange.bind(null, "Volume")}>
           <option value="Millilitre">Millilitres & Litres</option>
-          <option value="FluidOunce">Fluid Ounces</option>
-          <option value="CupUS">US Cups</option>
+          <option value="CupUS">US Fluid Ounces & Cups</option>
         </select>
       </div>
     </form>
