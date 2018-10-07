@@ -53,8 +53,6 @@ var volumeUnitAbbreviations = {
 }
 
 var getUnit = function(selectedUnit, quantity) {
-  console.log(selectedUnit);
-  console.log(quantity);
   switch (selectedUnit) {
     case "Gram":
     case "Kilogram":
@@ -87,6 +85,8 @@ var getUnit = function(selectedUnit, quantity) {
     case "FluidOunce":
       if (quantity>235) {
         return "CupUS";
+      } else if (quantity<30) {
+        return "Teaspoon";
       } else {
         return "FluidOunce";
       }
