@@ -52,6 +52,45 @@ var volumeUnitAbbreviations = {
   GallonUS : " US gallon(s)"
 }
 
+var getUnit = function(selectedUnit, quantity) {
+  switch (selectedUnit) {
+    case "Gram":
+    case "Kilogram":
+      if (quantity>1000) {
+        return "Kilogram";
+      } else {
+        return "Gram";
+      }
+    case "Ounce":
+    case "Pound":
+      if (quantity>453) {
+        return "Pound";
+      } else {
+        return "Ounce";
+      }
+    case "Teaspoon":
+      return "Teaspoon";
+    case "Tablespoon":
+      return "Tablespoon";
+    case "Litre":
+    case "Millilitre":
+      if (quantity>1000) {
+        return "Litre";
+      } else if (quantity<30) {
+        return "Teaspoon";
+      } else {
+        return "Millilitre";
+      }
+    case "CupUS":
+    case "FluidOunce":
+      if (quantity>235) {
+        return "CupUS";
+      } else {
+        return "FluidOunce";
+      }
+  }
+}
+
 module.exports = {
   WeightUnit,
   weightUnitValues,
