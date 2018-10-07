@@ -53,6 +53,8 @@ var volumeUnitAbbreviations = {
 }
 
 var getUnit = function(selectedUnit, quantity) {
+  console.log(selectedUnit);
+  console.log(quantity);
   switch (selectedUnit) {
     case "Gram":
     case "Kilogram":
@@ -97,5 +99,6 @@ module.exports = {
   weightUnitAbbreviations,
   VolumeUnit,
   volumeUnitValues,
-  volumeUnitAbbreviations
+  volumeUnitAbbreviations,
+  getUnit
 };

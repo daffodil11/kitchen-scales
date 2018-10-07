@@ -6,7 +6,7 @@ var weightUnitAbbreviations = require('../utils/units').weightUnitAbbreviations;
 var VolumeUnit = require('../utils/units').VolumeUnit;
 var volumeUnitValues = require('../utils/units').volumeUnitValues;
 var volumeUnitAbbreviations = require('../utils/units').volumeUnitAbbreviations;
-
+var getUnit = require('../utils/units').getUnit;
 
 var Ingredient = function (props) {
   // if (props.unitType==="Weight") {
@@ -37,10 +37,11 @@ var Ingredient = function (props) {
   //   var unitAbbr = volumeUnitAbbreviations[unit.toString()];
   //   var quantity = Math.round((props.quantity/volumeUnitValues[unit.toString()])*props.recipeYield);
   // }
+  var unit = getUnit(props.unit, props.quantity*props.recipeYield);
   var abbreviations = Object.assign(weightUnitAbbreviations, volumeUnitAbbreviations);
   var values = Object.assign(weightUnitValues, volumeUnitValues);
-  var unitAbbr = abbreviations[props.unit];
-  var quantity = Math.round(props.quantity/values[props.unit]*props.recipeYield);
+  var unitAbbr = abbreviations[unit];
+  var quantity = Math.round(props.quantity/values[unit]*props.recipeYield);
 
   return (
     <li className="ingredient">{quantity}{unitAbbr} of {props.ingredient}</li>

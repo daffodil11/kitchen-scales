@@ -19,8 +19,18 @@
       "ingredient": "milk",
       "unit": "Millilitre",
       "quantity": 350
+    },
+    {
+      "ingredient": "water",
+      "unit": "Millilitre",
+      "quantity": 25
+    },
+    {
+      "ingredient": "allspice",
+      "unit": "Teaspoon",
+      "quantity": 1
     }
   ],
-  "yield" : 4,
+  "yield" : 1,
   "servingType" : "cake(s)"
 }
