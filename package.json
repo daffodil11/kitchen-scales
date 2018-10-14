@@ -2,7 +2,7 @@
   "name": "kitchen-scales",
   "version": "1.0.0",
   "description": "A reusable, flexible recipe component.",
-  "main": "index.js",
+  "main": "dist/index_bundle.js",
   "scripts": {
     "start": "webpack-dev-server --open",
     "build": "SET NODE_ENV='production' && webpack -p",
@@ -14,6 +14,10 @@
     "presets": [
       "env",
       "react"
+    ],
+    "plugins": [
+    "transform-object-rest-spread",
+    "transform-react-jsx"
     ]
   },
   "keywords": [
@@ -22,9 +26,12 @@
   ],
   "author": "Simon Davey",
   "license": "GNU GPLv3",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/daffodil11/kitchen-scales.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daffodil11/kitchen-scales.git"
+  },
+  "peerDependencies": {
+    "react": "^16.4.2"
   },
   "dependencies": {
     "enum": "^2.5.0",
@@ -36,6 +43,8 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",

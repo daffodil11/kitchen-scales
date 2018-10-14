@@ -6,6 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index_bundle.js',
+    libraryTarget: 'commonjs2',
     publicPath: '/'
   },
   module: {
@@ -13,6 +14,9 @@ module.exports = {
       {test: /\.(js)$/, use: 'babel-loader'},
       {test: /\.css$/, use: ['style-loader', 'css-loader']}
     ]
+  },
+  externals: {
+    'react': 'commonjs react'
   },
   devServer: {
     historyApiFallback: true
