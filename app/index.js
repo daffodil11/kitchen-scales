@@ -2,7 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 require('./index.css');
 // var App = require('./App.js');
-var KitchenScales = require('./components/KitchenScales');
+var KitchenScales = require('./KitchenScales');
 var WeightUnit = require('./utils/units').WeightUnit;
 var VolumeUnit = require('./utils/units').VolumeUnit;
 //import recipe from './example-recipe.json'

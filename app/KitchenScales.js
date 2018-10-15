@@ -1,12 +1,12 @@
 var React = require('react');
 var PropTypes = require('prop-types');
-var UnitSelector = require('./UnitSelector');
-var Ingredient = require('./Ingredient');
-var YieldSetter = require('./YieldSetter');
-var WeightUnit = require('../utils/units').WeightUnit;
-var VolumeUnit = require('../utils/units').VolumeUnit;
-var weightUnitValues = require('../utils/units').weightUnitValues;
-var volumeUnitValues = require('../utils/units').volumeUnitValues;
+var UnitSelector = require('./components/UnitSelector');
+var Ingredient = require('./components/Ingredient');
+var YieldSetter = require('./components/YieldSetter');
+var WeightUnit = require('./utils/units').WeightUnit;
+var VolumeUnit = require('./utils/units').VolumeUnit;
+var weightUnitValues = require('./utils/units').weightUnitValues;
+var volumeUnitValues = require('./utils/units').volumeUnitValues;
 
 class KitchenScales extends React.Component {
   constructor (props) {
