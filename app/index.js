@@ -5,7 +5,7 @@ require('./index.css');
 var KitchenScales = require('./components/KitchenScales');
 var WeightUnit = require('./utils/units').WeightUnit;
 var VolumeUnit = require('./utils/units').VolumeUnit;
-import recipe from './example-recipe.json'
+//import recipe from './example-recipe.json'
 
 // if (recipe.servingType) {
 //   ReactDOM.render(
@@ -23,7 +23,10 @@ export default class MetaApp extends React.Component {
   render () {
     return (
       <div>
-        <KitchenScales ingredients={recipe.ingredients} recipeYield={recipe.recipeYield} servingType={recipe.servingType}/>
+        <KitchenScales
+          ingredients={this.props.recipe.ingredients}
+          recipeYield={this.props.recipe.recipeYield}
+          servingType={this.props.recipe.servingType}/>
       </div>
     );
   }
