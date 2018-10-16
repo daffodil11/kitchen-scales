@@ -1,4 +1,5 @@
 var React = require('react');
+require('./index.css');
 var PropTypes = require('prop-types');
 var UnitSelector = require('./components/UnitSelector');
 var Ingredient = require('./components/Ingredient');
@@ -8,7 +9,7 @@ var VolumeUnit = require('./utils/units').VolumeUnit;
 var weightUnitValues = require('./utils/units').weightUnitValues;
 var volumeUnitValues = require('./utils/units').volumeUnitValues;
 
-class KitchenScales extends React.Component {
+export default class KitchenScales extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -104,5 +105,3 @@ KitchenScales.defaultProps = {
   recipeYield : 1,
   servingType : "servings"
 };
-
-module.exports = KitchenScales;
