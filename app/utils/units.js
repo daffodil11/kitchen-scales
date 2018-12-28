@@ -16,13 +16,14 @@ var VolumeUnit = new Enum([
   "FluidOunce",
   "CupUS",
   "GallonUS"
-])
+], {ignoreCase: true})
 
 var weightUnitValues = {
   Gram : 1,
   Kilogram : 1000,
-  Ounce : 28.3495,
-  Pound : 453.592
+  Ounce : 28.350,
+  Pound : 453.592,
+  Stone : 6350.293
 };
 
 var volumeUnitValues = {
@@ -39,7 +40,8 @@ var weightUnitAbbreviations = {
   Gram : "g",
   Kilogram : "kg",
   Ounce : "oz",
-  Pound : "lb"
+  Pound : "lb",
+  Stone : "st"
 };
 
 var volumeUnitAbbreviations = {

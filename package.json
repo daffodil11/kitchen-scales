@@ -8,7 +8,7 @@
     "build": "SET NODE_ENV='production' && webpack -p",
     "deploy": "npm run build && firebase deploy",
     "firebase-init": "firebase login && firebase init",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "babel": {
     "presets": [
@@ -16,8 +16,8 @@
       "react"
     ],
     "plugins": [
-    "transform-object-rest-spread",
-    "transform-react-jsx"
+      "transform-object-rest-spread",
+      "transform-react-jsx"
     ]
   },
   "keywords": [
@@ -49,6 +49,7 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.6.0",
     "style-loader": "^0.22.1",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",
